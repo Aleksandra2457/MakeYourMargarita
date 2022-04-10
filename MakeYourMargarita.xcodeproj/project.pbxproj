@@ -10,7 +10,6 @@
 		D309D2142802CFB000F24A64 /* Margarita.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309D2132802CFB000F24A64 /* Margarita.swift */; };
 		D309D2162802CFBC00F24A64 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309D2152802CFBC00F24A64 /* NetworkManager.swift */; };
 		D309D2182802D02B00F24A64 /* MargaritasTypesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309D2172802D02B00F24A64 /* MargaritasTypesTableViewController.swift */; };
-		D309D21A2802D04B00F24A64 /* MargaritasDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D309D2192802D04B00F24A64 /* MargaritasDetailsViewController.swift */; };
 		D315B6BE2802CD41002E3911 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315B6BD2802CD41002E3911 /* AppDelegate.swift */; };
 		D315B6C02802CD41002E3911 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315B6BF2802CD41002E3911 /* SceneDelegate.swift */; };
 		D315B6C52802CD41002E3911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C32802CD41002E3911 /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 		D309D2132802CFB000F24A64 /* Margarita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margarita.swift; sourceTree = "<group>"; };
 		D309D2152802CFBC00F24A64 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D309D2172802D02B00F24A64 /* MargaritasTypesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargaritasTypesTableViewController.swift; sourceTree = "<group>"; };
-		D309D2192802D04B00F24A64 /* MargaritasDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargaritasDetailsViewController.swift; sourceTree = "<group>"; };
 		D315B6BA2802CD41002E3911 /* MakeYourMargarita.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeYourMargarita.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D315B6BD2802CD41002E3911 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D315B6BF2802CD41002E3911 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				D309D2172802D02B00F24A64 /* MargaritasTypesTableViewController.swift */,
-				D309D2192802D04B00F24A64 /* MargaritasDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,7 +194,6 @@
 			files = (
 				D309D2162802CFBC00F24A64 /* NetworkManager.swift in Sources */,
 				D309D2182802D02B00F24A64 /* MargaritasTypesTableViewController.swift in Sources */,
-				D309D21A2802D04B00F24A64 /* MargaritasDetailsViewController.swift in Sources */,
 				D315B6BE2802CD41002E3911 /* AppDelegate.swift in Sources */,
 				D309D2142802CFB000F24A64 /* Margarita.swift in Sources */,
 				D315B6C02802CD41002E3911 /* SceneDelegate.swift in Sources */,

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "1614196123_48-p-dim-na-chernom-fone-65.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
