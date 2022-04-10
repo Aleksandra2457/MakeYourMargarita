@@ -18,15 +18,22 @@ class MargaritasTypesTableViewController: UITableViewController {
         }
     }
     
-    var margaritasImages: [UIImage?] = []
+    var margaritasImages = [
+        "Margarita",
+        "Blue Margarita",
+        "Tommy's Margarita",
+        "Whitecap Margarita",
+        "Strawberry Margarita",
+        "Smashed Watermelon Margarita"
+    ]
 
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkManager.fetchData() { drink in
             self.margaritas += drink.drinks
-            self.updateImages()
         }
+        
     }
     
     // MARK: - Table View Data Source
@@ -40,26 +47,23 @@ class MargaritasTypesTableViewController: UITableViewController {
         let margarita = margaritas[indexPath.row]
         content.text = margarita.strDrink ?? ""
         content.secondaryText = margarita.composition
-        content.image = UIImage(named: "BaseImage2")
+        content.image = UIImage(named: margaritasImages[indexPath.row])
         content.imageProperties.cornerRadius = 30
         cell.contentConfiguration = content
         return cell
     }
     
-    
+    // MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    private func updateImages() {
-        margaritas.forEach { margarita in
-            NetworkManager.fetchImage(margarita.strDrinkThumb) { image in
-                self.margaritasImages.append(image)
-            }
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? MargaritasDetailsViewController else { return }
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destination.margarita = margaritas[indexPath.row]
+            destination.image = UIImage(named: margaritasImages[indexPath.row])
         }
     }
  

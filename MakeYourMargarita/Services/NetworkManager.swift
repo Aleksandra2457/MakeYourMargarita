@@ -21,6 +21,7 @@ class NetworkManager {
                 print(error?.localizedDescription ?? "Something went wrong")
                 return
             }
+            
             do {
                 let drink = try JSONDecoder().decode(Drink.self, from: data)
                 completion(drink)
@@ -30,20 +31,6 @@ class NetworkManager {
             
         }.resume()
         
-    }
-    
-    static func fetchImage(_ margaritasImageURL: String?, completion: @escaping (UIImage) -> ()) {
-        guard let url = URL(string: margaritasImageURL ?? "") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, let response = response else {
-                print(error?.localizedDescription ?? "Something went wrong")
-                return
-            }
-            print(response)
-            guard let image = UIImage(data: data) else { return }
-            completion(image)
-        }.resume()
     }
     
     private init() {}

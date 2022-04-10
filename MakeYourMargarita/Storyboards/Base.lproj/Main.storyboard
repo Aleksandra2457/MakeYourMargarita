@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,6 +40,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="HK1-pN-ahR" kind="show" id="KCr-4c-6Yk"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,6 +56,58 @@
             </objects>
             <point key="canvasLocation" x="213.04347826086959" y="285.9375"/>
         </scene>
+        <!--Margaritas Details View Controller-->
+        <scene sceneID="3ad-tL-6uC">
+            <objects>
+                <viewController id="HK1-pN-ahR" customClass="MargaritasDetailsViewController" customModule="MakeYourMargarita" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mza-pm-PQq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="74a-lm-Yq4">
+                                <rect key="frame" x="82" y="140" width="250" height="250"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-m9-Cfo">
+                                <rect key="frame" x="40" y="398" width="334" height="224"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b5h-XF-ItA">
+                                <rect key="frame" x="40" y="630" width="334" height="224"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CjB-dh-Awb"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CjB-dh-Awb" firstAttribute="bottom" secondItem="b5h-XF-ItA" secondAttribute="bottom" constant="8" id="0Xd-9c-YuH"/>
+                            <constraint firstItem="eq2-m9-Cfo" firstAttribute="top" secondItem="74a-lm-Yq4" secondAttribute="bottom" constant="8" id="6WS-dz-ddb"/>
+                            <constraint firstItem="b5h-XF-ItA" firstAttribute="leading" secondItem="CjB-dh-Awb" secondAttribute="leading" constant="40" id="DJM-XU-Fdu"/>
+                            <constraint firstItem="b5h-XF-ItA" firstAttribute="top" secondItem="eq2-m9-Cfo" secondAttribute="bottom" constant="8" id="Hyi-zd-N4e"/>
+                            <constraint firstItem="CjB-dh-Awb" firstAttribute="trailing" secondItem="74a-lm-Yq4" secondAttribute="trailing" constant="82" id="JRr-Zr-vd8"/>
+                            <constraint firstItem="74a-lm-Yq4" firstAttribute="leading" secondItem="CjB-dh-Awb" secondAttribute="leading" constant="82" id="Kyp-JW-wCM"/>
+                            <constraint firstItem="CjB-dh-Awb" firstAttribute="trailing" secondItem="eq2-m9-Cfo" secondAttribute="trailing" constant="40" id="MMl-Xz-fPT"/>
+                            <constraint firstItem="74a-lm-Yq4" firstAttribute="height" secondItem="Mza-pm-PQq" secondAttribute="height" multiplier="0.279018" id="N0y-TE-cbb"/>
+                            <constraint firstItem="CjB-dh-Awb" firstAttribute="trailing" secondItem="b5h-XF-ItA" secondAttribute="trailing" constant="40" id="c55-VC-OVP"/>
+                            <constraint firstItem="eq2-m9-Cfo" firstAttribute="height" secondItem="b5h-XF-ItA" secondAttribute="height" id="etr-yG-m7T"/>
+                            <constraint firstItem="74a-lm-Yq4" firstAttribute="top" secondItem="CjB-dh-Awb" secondAttribute="top" id="ocS-cO-tNY"/>
+                            <constraint firstItem="eq2-m9-Cfo" firstAttribute="leading" secondItem="CjB-dh-Awb" secondAttribute="leading" constant="40" id="voc-MZ-o3j"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ien-DV-Xq5"/>
+                    <connections>
+                        <outlet property="margaritasDescriptionLabel" destination="b5h-XF-ItA" id="8xT-73-fkd"/>
+                        <outlet property="margaritasImageView" destination="74a-lm-Yq4" id="Kgv-eA-Yqb"/>
+                        <outlet property="margaritasNameLabel" destination="eq2-m9-Cfo" id="Iq4-Tb-zwA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hSo-tJ-7VR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1095.6521739130435" y="285.9375"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="WT4-wE-6l9">
             <objects>
@@ -60,6 +116,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Nec-Xt-bbf">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                         <navigationBarAppearance key="standardAppearance">
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </navigationBarAppearance>
@@ -74,4 +133,5 @@
             <point key="canvasLocation" x="-697.10144927536237" y="285.9375"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

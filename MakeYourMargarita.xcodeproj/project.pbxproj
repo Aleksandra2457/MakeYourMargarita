@@ -15,6 +15,7 @@
 		D315B6C52802CD41002E3911 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C32802CD41002E3911 /* Main.storyboard */; };
 		D315B6C72802CD42002E3911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C62802CD42002E3911 /* Assets.xcassets */; };
 		D315B6CA2802CD42002E3911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C82802CD42002E3911 /* LaunchScreen.storyboard */; };
+		D3205ED6280335D20066070F /* MargaritasDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3205ED5280335D20066070F /* MargaritasDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		D315B6C62802CD42002E3911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D315B6C92802CD42002E3911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D315B6CB2802CD42002E3911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3205ED5280335D20066070F /* MargaritasDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargaritasDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				D309D2172802D02B00F24A64 /* MargaritasTypesTableViewController.swift */,
+				D3205ED5280335D20066070F /* MargaritasDetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				D309D2162802CFBC00F24A64 /* NetworkManager.swift in Sources */,
 				D309D2182802D02B00F24A64 /* MargaritasTypesTableViewController.swift in Sources */,
+				D3205ED6280335D20066070F /* MargaritasDetailsViewController.swift in Sources */,
 				D315B6BE2802CD41002E3911 /* AppDelegate.swift in Sources */,
 				D309D2142802CFB000F24A64 /* Margarita.swift in Sources */,
 				D315B6C02802CD41002E3911 /* SceneDelegate.swift in Sources */,
