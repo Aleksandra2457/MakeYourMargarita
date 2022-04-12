@@ -16,24 +16,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MargaritasDescriptionCell" textLabel="glo-xr-6lr" detailTextLabel="elN-Tf-UrF" style="IBUITableViewCellStyleSubtitle" id="g8u-GM-983">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MargaritasDescriptionCell" textLabel="glo-xr-6lr" detailTextLabel="elN-Tf-UrF" style="IBUITableViewCellStyleSubtitle" id="g8u-GM-983">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8u-GM-983" id="5s2-MW-j4Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="glo-xr-6lr">
-                                            <rect key="frame" x="20" y="6" width="25" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" id="glo-xr-6lr">
+                                            <rect key="frame" x="20" y="8" width="25" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="elN-Tf-UrF">
-                                            <rect key="frame" x="20" y="22.5" width="30.5" height="13.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" id="elN-Tf-UrF">
+                                            <rect key="frame" x="20" y="24.5" width="23" height="10"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -68,13 +68,13 @@
                                 <rect key="frame" x="82" y="140" width="250" height="250"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="eq2-m9-Cfo">
-                                <rect key="frame" x="40" y="398" width="334" height="224"/>
+                                <rect key="frame" x="40" y="398" width="334" height="168"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="b5h-XF-ItA">
-                                <rect key="frame" x="40" y="630" width="334" height="224"/>
+                                <rect key="frame" x="40" y="574" width="334" height="280"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -92,7 +92,7 @@
                             <constraint firstItem="CjB-dh-Awb" firstAttribute="trailing" secondItem="eq2-m9-Cfo" secondAttribute="trailing" constant="40" id="MMl-Xz-fPT"/>
                             <constraint firstItem="74a-lm-Yq4" firstAttribute="height" secondItem="Mza-pm-PQq" secondAttribute="height" multiplier="0.279018" id="N0y-TE-cbb"/>
                             <constraint firstItem="CjB-dh-Awb" firstAttribute="trailing" secondItem="b5h-XF-ItA" secondAttribute="trailing" constant="40" id="c55-VC-OVP"/>
-                            <constraint firstItem="eq2-m9-Cfo" firstAttribute="height" secondItem="b5h-XF-ItA" secondAttribute="height" id="etr-yG-m7T"/>
+                            <constraint firstItem="eq2-m9-Cfo" firstAttribute="height" secondItem="b5h-XF-ItA" secondAttribute="height" multiplier="0.6" id="etr-yG-m7T"/>
                             <constraint firstItem="74a-lm-Yq4" firstAttribute="top" secondItem="CjB-dh-Awb" secondAttribute="top" id="ocS-cO-tNY"/>
                             <constraint firstItem="eq2-m9-Cfo" firstAttribute="leading" secondItem="CjB-dh-Awb" secondAttribute="leading" constant="40" id="voc-MZ-o3j"/>
                         </constraints>

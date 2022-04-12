@@ -31,7 +31,7 @@ class MargaritasTypesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkManager.fetchData() { drink in
-            self.margaritas += drink.drinks
+            self.margaritas = drink.drinks
         }
         
     }
@@ -47,6 +47,7 @@ class MargaritasTypesTableViewController: UITableViewController {
         let margarita = margaritas[indexPath.row]
         content.text = margarita.strDrink ?? ""
         content.secondaryText = margarita.composition
+        content.secondaryTextProperties.adjustsFontSizeToFitWidth = true
         content.image = UIImage(named: margaritasImages[indexPath.row])
         content.imageProperties.cornerRadius = 30
         cell.contentConfiguration = content
@@ -55,7 +56,7 @@ class MargaritasTypesTableViewController: UITableViewController {
     
     // MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 180
+        100
     }
     
     // MARK: - Navigation

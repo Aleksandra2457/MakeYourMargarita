@@ -51,9 +51,10 @@ struct Margarita: Decodable {
 
         for index in 0...allIngredients.count - 1 {
             if let ingredient = allIngredients[index] {
-                compositionInStringFormat += "\(ingredient)\n"
+                compositionInStringFormat += " \(ingredient),"
             }
         }
+        compositionInStringFormat.remove(at: compositionInStringFormat.index(before: compositionInStringFormat.endIndex))
         return compositionInStringFormat
     }
 }
