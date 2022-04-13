@@ -13,6 +13,8 @@ class MargaritasDetailsViewController: UIViewController {
     @IBOutlet var margaritasImageView: UIImageView!
     
     @IBOutlet var margaritasNameLabel: UILabel!
+    @IBOutlet var margaritasTypeLabel: UILabel!
+    @IBOutlet var margaritasIngredientsLabel: UILabel!
     @IBOutlet var margaritasDescriptionLabel: UILabel!
     
     // MARK: - Public Properties
@@ -29,7 +31,9 @@ class MargaritasDetailsViewController: UIViewController {
     private func updateUI() {
         margaritasImageView.image = image
         margaritasImageView.layer.cornerRadius = 30
-        margaritasNameLabel.text = margarita.composition
+        margaritasNameLabel.text = margarita.strDrink ?? ""
+        margaritasTypeLabel.text = margarita.strAlcoholic ?? ""
+        margaritasIngredientsLabel.text = margarita.composition
         margaritasDescriptionLabel.text = margarita.strInstructions ?? ""
     }
     

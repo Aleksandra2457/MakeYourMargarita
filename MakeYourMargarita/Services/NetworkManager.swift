@@ -10,9 +10,11 @@ import UIKit
 
 class NetworkManager {
     
-    let shared = NetworkManager()
+    static let shared = NetworkManager()
     
-    static func fetchData(_ completion: @escaping (Drink) -> ()) {
+    private init() {}
+    
+    func fetchData(_ completion: @escaping (Drink) -> ()) {
         
         guard let url = URL(string: "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita") else { return }
         
@@ -24,7 +26,9 @@ class NetworkManager {
             
             do {
                 let drink = try JSONDecoder().decode(Drink.self, from: data)
-                completion(drink)
+                DispatchQueue.main.async {
+                    completion(drink)
+                }
             } catch let error {
                 print(error.localizedDescription)
             }
@@ -33,7 +37,16 @@ class NetworkManager {
         
     }
     
-    private init() {}
+    func fetchImage(from url: String?, completion: @escaping (Data) -> Void)  {
+        guard let stringURL = url else { return }
+        guard let imageURL = URL(string: stringURL) else { return }
+        DispatchQueue.global().async {
+            guard let data = try? Data(contentsOf: imageURL) else { return }
+            DispatchQueue.main.async {
+                completion(data)
+            }
+        }
+    }
     
 }
 

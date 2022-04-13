@@ -10,13 +10,7 @@ import UIKit
 class MargaritasTypesTableViewController: UITableViewController {
     
     // MARK: - Public Properties
-    var margaritas: [Margarita] = [] {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+    var margaritas: [Margarita] = []
     
     var margaritasImages = [
         "Margarita",
@@ -30,8 +24,9 @@ class MargaritasTypesTableViewController: UITableViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.fetchData() { drink in
+        NetworkManager.shared.fetchData() { drink in
             self.margaritas = drink.drinks
+            self.tableView.reloadData()
         }
         
     }
@@ -42,15 +37,9 @@ class MargaritasTypesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MargaritasDescriptionCell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MargaritasTableViewCell", for: indexPath) as! MargaritasTableViewCell
         let margarita = margaritas[indexPath.row]
-        content.text = margarita.strDrink ?? ""
-        content.secondaryText = margarita.composition
-        content.secondaryTextProperties.adjustsFontSizeToFitWidth = true
-        content.image = UIImage(named: margaritasImages[indexPath.row])
-        content.imageProperties.cornerRadius = 30
-        cell.contentConfiguration = content
+        cell.configure(with: margarita)
         return cell
     }
     
