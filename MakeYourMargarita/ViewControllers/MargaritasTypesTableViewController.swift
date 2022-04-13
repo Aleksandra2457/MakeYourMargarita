@@ -15,11 +15,7 @@ class MargaritasTypesTableViewController: UITableViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        NetworkManager.shared.fetchData() { drink in
-            self.margaritas = drink.drinks
-            self.tableView.reloadData()
-        }
-        
+        fetchMargaritas()
     }
     
     // MARK: - Table View Data Source
@@ -44,6 +40,18 @@ class MargaritasTypesTableViewController: UITableViewController {
         guard let destination = segue.destination as? MargaritasDetailsViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
             destination.margarita = margaritas[indexPath.row]
+        }
+    }
+    
+    private func fetchMargaritas() {
+        NetworkManager.shared.fetchDataWithAlamofire { result in
+            switch result {
+            case .success(let margaritas):
+                self.margaritas = margaritas
+                self.tableView.reloadData()
+            case .failure(let error):
+                print(error)
+            }
         }
     }
  

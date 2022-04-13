@@ -6,7 +6,13 @@
 //
 
 import Foundation
-import UIKit
+import Alamofire
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
 
 class NetworkManager {
     
@@ -26,6 +32,7 @@ class NetworkManager {
             
             do {
                 let drink = try JSONDecoder().decode(Drink.self, from: data)
+                print(drink)
                 DispatchQueue.main.async {
                     completion(drink)
                 }
@@ -46,6 +53,23 @@ class NetworkManager {
                 completion(data)
             }
         }
+    }
+    
+    func fetchDataWithAlamofire(completion: @escaping(Result<[Margarita], NetworkError>) -> Void) {
+        AF.request("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita")
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    let drink = Drink.getDrink(from: value)
+                    let margaritas = drink.drinks
+                    completion(.success(margaritas))
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(.decodingError))
+                }
+            }
+        
     }
     
 }
