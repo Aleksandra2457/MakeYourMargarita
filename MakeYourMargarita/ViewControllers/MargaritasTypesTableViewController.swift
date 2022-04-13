@@ -45,7 +45,7 @@ class MargaritasTypesTableViewController: UITableViewController {
     
     // MARK: - Table View Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        100
+        150
     }
     
     // MARK: - Navigation
@@ -53,7 +53,7 @@ class MargaritasTypesTableViewController: UITableViewController {
         guard let destination = segue.destination as? MargaritasDetailsViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
             destination.margarita = margaritas[indexPath.row]
-            destination.image = UIImage(named: margaritasImages[indexPath.row])
+//            destination.image = UIImage(named: margaritasImages[indexPath.row])
         }
     }
  

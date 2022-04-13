@@ -12,9 +12,6 @@ class MargaritasDetailsViewController: UIViewController {
     // MARK: - IB Outlets
     @IBOutlet var margaritasImageView: UIImageView!
     
-    @IBOutlet var margaritasNameLabel: UILabel!
-    @IBOutlet var margaritasTypeLabel: UILabel!
-    @IBOutlet var margaritasIngredientsLabel: UILabel!
     @IBOutlet var margaritasDescriptionLabel: UILabel!
     
     // MARK: - Public Properties
@@ -29,12 +26,11 @@ class MargaritasDetailsViewController: UIViewController {
     
     // MARK: - Private Methods
     private func updateUI() {
-        margaritasImageView.image = image
         margaritasImageView.layer.cornerRadius = 30
-        margaritasNameLabel.text = margarita.strDrink ?? ""
-        margaritasTypeLabel.text = margarita.strAlcoholic ?? ""
-        margaritasIngredientsLabel.text = margarita.composition
-        margaritasDescriptionLabel.text = margarita.strInstructions ?? ""
+        margaritasDescriptionLabel.text = "\(margarita.strDrink ?? "")\n\n\(margarita.strAlcoholic ?? "")\n\n\(margarita.composition)\n\n\(margarita.strInstructions ?? "")"
+        NetworkManager.shared.fetchImage(from: margarita.strDrinkThumb, completion: { image in
+            self.margaritasImageView.image = UIImage(data: image)
+        })
     }
     
 }
