@@ -11,15 +11,6 @@ class MargaritasTypesTableViewController: UITableViewController {
     
     // MARK: - Public Properties
     var margaritas: [Margarita] = []
-    
-    var margaritasImages = [
-        "Margarita",
-        "Blue Margarita",
-        "Tommy's Margarita",
-        "Whitecap Margarita",
-        "Strawberry Margarita",
-        "Smashed Watermelon Margarita"
-    ]
 
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -53,7 +44,6 @@ class MargaritasTypesTableViewController: UITableViewController {
         guard let destination = segue.destination as? MargaritasDetailsViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
             destination.margarita = margaritas[indexPath.row]
-//            destination.image = UIImage(named: margaritasImages[indexPath.row])
         }
     }
  

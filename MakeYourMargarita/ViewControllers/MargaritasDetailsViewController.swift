@@ -11,7 +11,6 @@ class MargaritasDetailsViewController: UIViewController {
     
     // MARK: - IB Outlets
     @IBOutlet var margaritasImageView: UIImageView!
-    
     @IBOutlet var margaritasDescriptionLabel: UILabel!
     
     // MARK: - Public Properties
