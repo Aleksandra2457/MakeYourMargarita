@@ -20,15 +20,17 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchImage(from url: String?, completion: @escaping (Data) -> Void)  {
-        guard let stringURL = url else { return }
-        guard let imageURL = URL(string: stringURL) else { return }
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: imageURL) else { return }
-            DispatchQueue.main.async {
-                completion(data)
+    func fetchImage(from url: String, completion: @escaping (Result<Data, AFError>) -> Void)  {
+        AF.request(url)
+            .validate()
+            .responseData { response in
+                switch response.result {
+                case .success(let data):
+                    completion(.success(data))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
-        }
     }
     
     func fetchDataWithAlamofire(completion: @escaping(Result<[Margarita], NetworkError>) -> Void) {

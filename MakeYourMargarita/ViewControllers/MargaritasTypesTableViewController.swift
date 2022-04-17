@@ -24,9 +24,27 @@ class MargaritasTypesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MargaritasTableViewCell", for: indexPath) as! MargaritasTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MargaritasTableViewCell", for: indexPath)
         let margarita = margaritas[indexPath.row]
-        cell.configure(with: margarita)
+        var content = cell.defaultContentConfiguration()
+        content.text = margarita.strDrink ?? ""
+        content.secondaryText = margarita.composition
+        content.secondaryTextProperties.adjustsFontSizeToFitWidth = true
+        
+        if let imageURL = margarita.strDrinkThumb {
+            NetworkManager.shared.fetchImage(from: imageURL) { result in
+                switch result {
+                case .success(let imageData):
+                    content.image = UIImage(data: imageData)
+                    content.imageProperties.cornerRadius = 20
+                    cell.contentConfiguration = content
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
+        cell.contentConfiguration = content
         return cell
     }
     

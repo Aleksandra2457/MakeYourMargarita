@@ -15,7 +15,6 @@ class MargaritasDetailsViewController: UIViewController {
     
     // MARK: - Public Properties
     var margarita: Margarita!
-    var image: UIImage!
     
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
@@ -27,9 +26,18 @@ class MargaritasDetailsViewController: UIViewController {
     private func updateUI() {
         margaritasImageView.layer.cornerRadius = 30
         margaritasDescriptionLabel.text = "\(margarita.strDrink ?? "")\n\n\(margarita.strAlcoholic ?? "")\n\n\(margarita.composition)\n\n\(margarita.strInstructions ?? "")"
-        NetworkManager.shared.fetchImage(from: margarita.strDrinkThumb, completion: { image in
-            self.margaritasImageView.image = UIImage(data: image)
-        })
+        if let imageURL = margarita.strDrinkThumb {
+            NetworkManager.shared.fetchImage(from: imageURL) { result in
+                switch result {
+                case .success(let imageData):
+                    self.margaritasImageView.image = UIImage(data: imageData)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
     }
-    
 }
+
+

@@ -16,7 +16,6 @@
 		D315B6C72802CD42002E3911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C62802CD42002E3911 /* Assets.xcassets */; };
 		D315B6CA2802CD42002E3911 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D315B6C82802CD42002E3911 /* LaunchScreen.storyboard */; };
 		D3205ED6280335D20066070F /* MargaritasDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3205ED5280335D20066070F /* MargaritasDetailsViewController.swift */; };
-		D32B17342806FE2E00CF5F8C /* MargaritasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B17332806FE2E00CF5F8C /* MargaritasTableViewCell.swift */; };
 		D32B173728071E8200CF5F8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D32B173628071E8200CF5F8C /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +31,6 @@
 		D315B6C92802CD42002E3911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D315B6CB2802CD42002E3911 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3205ED5280335D20066070F /* MargaritasDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargaritasDetailsViewController.swift; sourceTree = "<group>"; };
-		D32B17332806FE2E00CF5F8C /* MargaritasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MargaritasTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +73,6 @@
 		D315B6BC2802CD41002E3911 /* MakeYourMargarita */ = {
 			isa = PBXGroup;
 			children = (
-				D32B17322806FE0900CF5F8C /* Views */,
 				D309D2122802CF5200F24A64 /* ViewControllers */,
 				D315B6D52802CD84002E3911 /* Services */,
 				D315B6D42802CD6C002E3911 /* Models */,
@@ -127,14 +124,6 @@
 				D309D2152802CFBC00F24A64 /* NetworkManager.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		D32B17322806FE0900CF5F8C /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				D32B17332806FE2E00CF5F8C /* MargaritasTableViewCell.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,7 +208,6 @@
 				D3205ED6280335D20066070F /* MargaritasDetailsViewController.swift in Sources */,
 				D315B6BE2802CD41002E3911 /* AppDelegate.swift in Sources */,
 				D309D2142802CFB000F24A64 /* Margarita.swift in Sources */,
-				D32B17342806FE2E00CF5F8C /* MargaritasTableViewCell.swift in Sources */,
 				D315B6C02802CD41002E3911 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
